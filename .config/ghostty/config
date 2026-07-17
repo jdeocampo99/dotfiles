@@ -19,3 +19,8 @@ keybind = super+ctrl+h=goto_split:left
 keybind = super+ctrl+j=goto_split:down
 keybind = super+ctrl+k=goto_split:up
 keybind = super+ctrl+l=goto_split:right
+
+# quick terminal — global drop-down, works even when Ghostty isn't focused
+# (macOS will prompt for Accessibility permission the first time this reloads)
+keybind = global:super+grave_accent=toggle_quick_terminal
+quick-terminal-animation-duration = 0.15

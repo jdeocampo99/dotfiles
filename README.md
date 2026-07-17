@@ -66,6 +66,7 @@ brew install --cask font-jetbrains-mono-nerd-font
 **Ghostty**
 - `custom-shader` line in `.config/ghostty/config` for CRT/glow effects (not enabled by default)
 - `cmd+shift+,` — reload config live after editing
+- `` cmd+` `` (backtick) — quick terminal: drop-down terminal that works even when Ghostty isn't the focused app. First reload after adding this, macOS will prompt for Accessibility permission (System Settings → Privacy & Security → Accessibility) — it won't work globally until granted
 
 ## Machine-specific / personal config
 

@@ -51,7 +51,7 @@ brew install --cask font-jetbrains-mono-nerd-font
 - `btop` — mouse-driven CPU/mem/disk/net monitor, `q` to quit
 
 **Fun**
-- `fastfetch` — system info banner with OS logo
+- Shows automatically on every new shell (system info banner with OS logo). Run `fastfetch` manually any time too.
 
 **Ghostty**
 - `custom-shader` line in `.config/ghostty/config` for CRT/glow effects (not enabled by default)

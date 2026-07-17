@@ -1,3 +1,6 @@
+# startup banner
+fastfetch
+
 # completion system (needed before plugins that register completions)
 autoload -Uz compinit && compinit
 

@@ -44,8 +44,10 @@ eval "$(zoxide init zsh)"
 # fzf (Ctrl+R history, Ctrl+T file search, Alt+C cd)
 source <(fzf --zsh)
 
-# atuin (searchable history DB, Ctrl+R) — up/down arrow left to zsh-history-substring-search
-eval "$(atuin init zsh --disable-up-arrow)"
+# atuin (searchable history DB) — up/down arrow both open atuin's search
+eval "$(atuin init zsh)"
+bindkey '^[[B' atuin-up-search
+bindkey '^[OB' atuin-up-search
 
 # Navigation aliases
 alias ..="cd .."

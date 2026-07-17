@@ -54,7 +54,8 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 **Git**
 - `git diff` / `git log -p` — now rendered side-by-side with syntax highlighting via delta
-- Aliases: `git st` (status), `git cm "msg"` (commit), `git co`/`git cob` (checkout/checkout -b), `git l` (graph log), `git undo` (soft-reset last commit)
+- `git aliases` — prints the full cheatsheet of every alias below, color-coded by category
+- Common ones: `git st` (short status), `git cm "msg"` (commit), `git co`/`git cob` (checkout/checkout -b), `git wip` (quick WIP commit), `git lg`/`git ll` (graph log, full/last-20), `git undo`/`git undos` (undo last commit, mixed/soft), `git cmp "msg"` (commit + push in one), `git clean-merged` (delete local branches already merged to main), `git cpbr` (copy current branch name to clipboard)
 - `lazygit` — full terminal UI for staging, committing, branching
 
 **System monitor**
@@ -75,19 +76,11 @@ brew install --cask font-jetbrains-mono-nerd-font
 - Quick actions (via herdr-plus) for the Tagalingo repo: delete current worktree, open the branch's Linear ticket, open the branch's GitHub PR
 - `tdi/herdr-worktree-setup` runs `./worktree_setup.sh` automatically whenever a new worktree is created for `~/Coding_Projects/tagalog-learning-app`
 
-## Adding the LazyVim config
-
-Not in this repo yet. To add it (from whichever machine has the config you want to keep):
-
-```sh
-cp -r ~/.config/nvim ~/dotfiles/.config/nvim
-cd ~/dotfiles
-git add .config/nvim
-git commit -m "Add LazyVim config"
-git push
-```
-
-`install.sh` already symlinks `~/.config/nvim` to the repo copy once it exists — no script changes needed after this. On other machines, `git pull && ~/dotfiles/install.sh` picks it up.
+**LazyVim** (`.config/nvim`)
+- Plugins: copilot.lua (GitHub Copilot ghost-text, `Alt+L` to accept), bufferline, treesitter, gitsigns, glance (LSP peek), diffview, snacks
+- Custom colorscheme: `ace-palenight`
+- See `.config/nvim/CHEATSHEET.md` for the full keymap reference
+- First launch after `install.sh` will auto-install plugins via Lazy — expect a delay on first open
 
 ## Machine-specific / personal config
 

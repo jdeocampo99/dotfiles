@@ -44,7 +44,9 @@ alias lta="eza --tree --icons --level=2 -a"
 # zoxide (smarter cd)
 eval "$(zoxide init zsh)"
 
-# fzf (Ctrl+R history, Ctrl+T file search, Alt+C cd)
+# fzf (Ctrl+R history, Ctrl+T file search, Alt+C cd) — previews via bat/eza
+export FZF_CTRL_T_OPTS="--preview '[[ -d {} ]] && eza --tree --icons --color=always --level=2 {} || bat --color=always --style=numbers --line-range=:500 {}' --preview-window=right:60%"
+export FZF_ALT_C_OPTS="--preview 'eza --tree --icons --color=always --level=2 {}'"
 source <(fzf --zsh)
 
 # atuin (searchable history DB) — up/down arrow both open atuin's search
@@ -73,6 +75,9 @@ export PATH="$HOME/.deno/bin:$PATH"
 
 # starship prompt
 eval "$(starship init zsh)"
+
+# direnv (auto-load/unload per-directory env vars from .envrc)
+eval "$(direnv hook zsh)"
 
 # machine-specific secrets/env vars, not tracked in dotfiles repo
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local

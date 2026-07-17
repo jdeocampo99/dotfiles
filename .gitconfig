@@ -1,0 +1,42 @@
+[user]
+	name = Justin De Ocampo
+	email = justindeocampo99@gmail.com
+[core]
+	excludesfile = /Users/justindeocampo/.gitignore_global
+	pager = delta
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/justindeocampo/.stCommitMsg
+[http]
+	postBuffer = 524288000
+[alias]
+	st = status
+	cm = commit -m
+	gl = config --global -l
+	co = checkout
+	cob = checkout -b
+	del = branch -D
+	pul = pull origin
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+	p = push -u origin
+	l = log --oneline --graph --decorate
+	undo = reset HEAD~1 --soft
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+[merge]
+	conflictstyle = zdiff3

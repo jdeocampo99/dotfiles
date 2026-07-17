@@ -1,0 +1,81 @@
+# completion system (needed before plugins that register completions)
+autoload -Uz compinit && compinit
+
+# antidote plugin manager
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+export EDITOR='code --wait'
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Shell aliases
+alias reload="source ~/.zshrc"
+alias zshrc="open ~/.zshrc"
+
+# eza (modern ls replacement — requires Nerd Font)
+alias ls="eza --icons"
+alias ll="eza -lh --icons --git"
+alias la="eza -lah --icons --git"
+alias lt="eza --tree --icons --level=2"
+alias lta="eza --tree --icons --level=2 -a"
+
+# zoxide (smarter cd)
+eval "$(zoxide init zsh)"
+
+# fzf (Ctrl+R history, Ctrl+T file search, Alt+C cd)
+source <(fzf --zsh)
+
+# atuin (searchable history DB, Ctrl+R) — up/down arrow left to zsh-history-substring-search
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# Navigation aliases
+alias cdp="cd ~/Coding_Projects"
+alias ..="cd .."
+alias ...="cd ../.."  
+alias ....="cd ../../.."
+export PATH="$HOME/.local/bin:$PATH"
+
+alias cdsp='claude --dangerously-skip-permissions'
+alias hdm='hunk diff origin/main...HEAD'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/justindeocampo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/justindeocampo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/justindeocampo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/justindeocampo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Open current directory in Finder
+alias finder="open ."
+
+# Stop all running Docker containers (e.g. leftover Supabase worktree stacks)
+alias dockstop='docker stop $(docker ps -q)'
+
+
+# Apple Silicon Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$HOME/.deno/bin:$PATH"
+
+# starship prompt
+eval "$(starship init zsh)"
+
+# machine-specific secrets/env vars, not tracked in dotfiles repo
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

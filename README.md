@@ -56,7 +56,7 @@ brew install --cask font-jetbrains-mono-nerd-font
 - `git diff` / `git log -p` — now rendered side-by-side with syntax highlighting via delta
 - `git aliases` — prints the full cheatsheet of every alias below, color-coded by category
 - Common ones: `git st` (short status), `git cm "msg"` (commit), `git co`/`git cob` (checkout/checkout -b), `git wip` (quick WIP commit), `git lg`/`git ll` (graph log, full/last-20), `git undo`/`git undos` (undo last commit, mixed/soft), `git cmp "msg"` (commit + push in one), `git clean-merged` (delete local branches already merged to main), `git cpbr` (copy current branch name to clipboard)
-- `lazygit` — full terminal UI for staging, committing, branching
+- `lazygit` — full terminal UI for staging, committing, branching. Tuned for large monorepos: `core.fsmonitor`/`core.untrackedCache` (in `.gitconfig`) make `git status` itself fast instead of rescanning the whole tree every call, and `.config/lazygit/config.yml` disables lazygit's background auto-fetch (still fetches on demand with `f`)
 
 **System monitor**
 - `btop` — mouse-driven CPU/mem/disk/net monitor, `q` to quit

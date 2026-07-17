@@ -12,6 +12,10 @@ ln -sfv "$DOTFILES/.gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES/.config/ghostty/config" ~/.config/ghostty/config
 ln -sfv "$DOTFILES/.config/starship.toml" ~/.config/starship.toml
 
+# lazygit reads from ~/Library/Application Support on macOS, not ~/.config
+mkdir -p ~/Library/"Application Support"/lazygit
+ln -sfv "$DOTFILES/.config/lazygit/config.yml" ~/Library/"Application Support"/lazygit/config.yml
+
 if [ -d "$DOTFILES/.config/nvim" ]; then
 	ln -sfv "$DOTFILES/.config/nvim" ~/.config/nvim
 fi

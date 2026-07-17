@@ -1,0 +1,3 @@
+name = "Open PR on GitHub"
+description = "Open the current branch's PR (falls back to the repo page)"
+command = 'gh pr view "$(git branch --show-current)" --web || gh repo view --web'

@@ -1,0 +1,14 @@
+repo = "tagalog-learning-app"
+
+[[tabs]]
+name = "terminal"
+
+[[tabs.panes]]
+command = "claude --dangerously-skip-permissions"
+
+[[tabs.panes]]
+split = "right"
+
+[[tabs]]
+name = "editor"
+command = "nvim ."

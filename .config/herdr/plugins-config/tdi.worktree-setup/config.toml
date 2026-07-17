@@ -1,0 +1,3 @@
+[[project]]
+path = "~/Coding_Projects/tagalog-learning-app"
+steps = ["./worktree_setup.sh"]

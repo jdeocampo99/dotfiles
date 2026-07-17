@@ -1,0 +1,3 @@
+name = "Open Linear Ticket for Branch"
+description = "Open the ticket parsed from the current branch name"
+command = "open \"https://linear.app/tagalingo/issue/$(git branch --show-current | grep -oiE '[a-z]+-[0-9]+' | head -1 | tr a-z A-Z)\""

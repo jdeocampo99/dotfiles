@@ -27,4 +27,4 @@
 [merge]
 	conflictstyle = zdiff3
 [include]
-	path = /Users/justindeocampo/.gitconfig.local
+	path = ~/.gitconfig.local

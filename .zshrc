@@ -48,20 +48,12 @@ source <(fzf --zsh)
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # Navigation aliases
-alias cdp="cd ~/Coding_Projects"
 alias ..="cd .."
-alias ...="cd ../.."  
+alias ...="cd ../.."
 alias ....="cd ../../.."
 export PATH="$HOME/.local/bin:$PATH"
 
-alias cdsp='claude --dangerously-skip-permissions'
 alias hdm='hunk diff origin/main...HEAD'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/justindeocampo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/justindeocampo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/justindeocampo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/justindeocampo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Open current directory in Finder
 alias finder="open ."

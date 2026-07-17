@@ -12,6 +12,10 @@ ln -sfv "$DOTFILES/.gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES/.config/ghostty/config" ~/.config/ghostty/config
 ln -sfv "$DOTFILES/.config/starship.toml" ~/.config/starship.toml
 
+if [ -d "$DOTFILES/.config/nvim" ]; then
+	ln -sfv "$DOTFILES/.config/nvim" ~/.config/nvim
+fi
+
 echo ""
 echo "Symlinked. Now install the packages this config expects:"
 echo "  brew install antidote starship fzf atuin git-delta btop fastfetch eza zoxide ripgrep fd bat lazygit tmux"

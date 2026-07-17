@@ -68,6 +68,20 @@ brew install --cask font-jetbrains-mono-nerd-font
 - `cmd+shift+,` — reload config live after editing
 - `` cmd+` `` (backtick) — quick terminal: drop-down terminal that works even when Ghostty isn't the focused app. First reload after adding this, macOS will prompt for Accessibility permission (System Settings → Privacy & Security → Accessibility) — it won't work globally until granted
 
+## Adding the LazyVim config
+
+Not in this repo yet. To add it (from whichever machine has the config you want to keep):
+
+```sh
+cp -r ~/.config/nvim ~/dotfiles/.config/nvim
+cd ~/dotfiles
+git add .config/nvim
+git commit -m "Add LazyVim config"
+git push
+```
+
+`install.sh` already symlinks `~/.config/nvim` to the repo copy once it exists — no script changes needed after this. On other machines, `git pull && ~/dotfiles/install.sh` picks it up.
+
 ## Machine-specific / personal config
 
 Not tracked here on purpose — create these yourself on each machine:

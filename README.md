@@ -26,7 +26,11 @@ brew install --cask font-jetbrains-mono-nerd-font
 **Fuzzy finder (fzf)**
 - `Ctrl+T` — fuzzy-find a file/dir under cwd, inserts the path at your cursor. Shows a live preview (bat for files, eza tree for dirs)
 - `Alt+C` — fuzzy-find a directory and `cd` into it, with a tree preview
+- `**` then `Tab` — fuzzy path completion anywhere a path is expected, e.g. `vim **<Tab>`
 - Pipe anything into it yourself, e.g. `git branch | fzf`
+
+**Tab-completion (fzf-tab)**
+- Plain `Tab` now opens an fzf-powered menu for *any* completion — file paths, git branches, docker containers, command flags, `brew install <Tab>`, all of it — instead of the old static cycling list. Same bat/eza preview as `Ctrl+T`.
 
 **Prompt (starship)** — shows automatically, nothing to invoke:
 - current dir, git branch, git status (`staged`/`modified`/`untracked`/etc. in plain words), language runtime version (only in relevant projects), command duration for anything over 2s

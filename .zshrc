@@ -8,6 +8,9 @@ autoload -Uz compinit && compinit
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 antidote load ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 
+# fzf-tab: preview files/dirs during tab-completion, same as fzf's Ctrl+T
+zstyle ':fzf-tab:complete:*:*' fzf-preview '[[ -d $realpath ]] && eza --tree --icons --color=always --level=2 $realpath || bat --color=always --style=numbers --line-range=:500 $realpath 2>/dev/null'
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"

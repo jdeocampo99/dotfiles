@@ -71,7 +71,6 @@ brew install --cask font-jetbrains-mono-nerd-font
 
 **herdr** (terminal session/worktree manager, [herdr.dev](https://herdr.dev))
 - `prefix+f` / `prefix+shift+f` — open the built-in file viewer (split / tab)
-- `prefix+shift+r` — toggle the review sidebar (needs `persiyanov/herdr-reviewr` installed — not bundled by `install.sh`, config references it but it's not currently installed on the source machine either)
 - `prefix+up` / `prefix+down` — herdr-plus: projects / quick actions
 - Quick actions (via herdr-plus) for the Tagalingo repo: delete current worktree, open the branch's Linear ticket, open the branch's GitHub PR
 - `tdi/herdr-worktree-setup` runs `./worktree_setup.sh` automatically whenever a new worktree is created for `~/Coding_Projects/tagalog-learning-app`

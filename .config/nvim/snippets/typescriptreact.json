@@ -1,0 +1,105 @@
+{
+  "Prism React FC component": {
+    "prefix": "pcomp",
+    "body": [
+      "import React, { useCallback } from 'react'",
+      "import { ${1:Theme}, ${2:IconButton} } from '@doordash/prism-react'",
+      "import styled from 'styled-components'",
+      "",
+      "type ${3:Component}Props = {",
+      "\t${4:data}: ${5:unknown}",
+      "\tstyle?: React.CSSProperties",
+      "}",
+      "",
+      "const Styled${3:Component} = styled.div`",
+      "\tdisplay: flex;",
+      "`",
+      "",
+      "/**",
+      " * ${3:Component} — $6",
+      " */",
+      "export const ${3:Component}: React.FC<${3:Component}Props> = ({ ${4:data}, style = {} }) => {",
+      "\tconst handle${7:Action} = useCallback(() => {",
+      "\t\t$0",
+      "\t}, [${4:data}])",
+      "",
+      "\treturn (",
+      "\t\t<Styled${3:Component} style={style}>",
+      "\t\t\t${4:data}",
+      "\t\t</Styled${3:Component}>",
+      "\t)",
+      "}"
+    ],
+    "description": "Prism React FC component with styled-components (web-next pattern)"
+  },
+  "React FC component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "type ${1:Component}Props = {",
+      "\t$0",
+      "}",
+      "",
+      "export const ${1:Component}: React.FC<${1:Component}Props> = ({}) => {",
+      "\treturn (",
+      "\t\t<div>${1:Component}</div>",
+      "\t)",
+      "}"
+    ],
+    "description": "React functional component with typed props"
+  },
+  "React FC with hooks": {
+    "prefix": "rfch",
+    "body": [
+      "import React, { useState, useCallback } from 'react'",
+      "",
+      "type ${1:Component}Props = {",
+      "\t$0",
+      "}",
+      "",
+      "export const ${1:Component}: React.FC<${1:Component}Props> = ({}) => {",
+      "\tconst [state, setState] = useState<${2:type}>(null)",
+      "",
+      "\tconst handle${3:Action} = useCallback(() => {",
+      "\t\tsetState(null)",
+      "\t}, [])",
+      "",
+      "\treturn (",
+      "\t\t<div>${1:Component}</div>",
+      "\t)",
+      "}"
+    ],
+    "description": "React FC with useState + useCallback hooks"
+  },
+  "useEffect": {
+    "prefix": "ue",
+    "body": ["useEffect(() => {", "\t$0", "}, [])"],
+    "description": "useEffect with empty deps"
+  },
+  "useEffect with deps": {
+    "prefix": "ued",
+    "body": ["useEffect(() => {", "\t$0", "}, [${1:deps}])"],
+    "description": "useEffect with dependencies"
+  },
+  "useState": {
+    "prefix": "us",
+    "body": ["const [${1:state}, set${1:State}]] = useState<${2:type}>(${3:initial})"],
+    "description": "useState hook"
+  },
+  "useCallback": {
+    "prefix": "ucb",
+    "body": ["const ${1:handler} = useCallback(() => {", "\t$0", "}, [])"],
+    "description": "useCallback hook"
+  },
+  "useMemo": {
+    "prefix": "umem",
+    "body": ["const ${1:value} = useMemo(() => {", "\treturn $0", "}, [${2:deps}])"],
+    "description": "useMemo hook"
+  },
+  "useRef": {
+    "prefix": "uref",
+    "body": ["const ${1:ref} = useRef<${2:type}>(null)"],
+    "description": "useRef hook"
+  }
+}

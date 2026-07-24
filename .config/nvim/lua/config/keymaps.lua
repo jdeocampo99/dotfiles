@@ -5,14 +5,17 @@
 vim.keymap.set("i", "<C-c>", "<Esc>:w<CR>", { desc = "Exit insert mode and save" })
 -- Save file when exiting insert mode with Escape
 vim.keymap.set("i", "<Esc>", "<Esc>:w<CR>", { desc = "Exit insert mode and save" })
+-- Redo with U (inverse of u); avoids stock `U` undo-line cursor jump.
+vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 -- Repo-wide live grep (searches from git root, not current subdir)
 vim.keymap.set("n", "<leader>/", function()
   local root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-  if root == "" or vim.v.shell_error ~= 0 then
-    require("telescope.builtin").live_grep()
-    return
-  end
-  require("telescope.builtin").live_grep({ cwd = root })
+  local cwd = (root ~= "" and vim.v.shell_error == 0) and root or nil
+  -- telescope.nvim is lazy-loaded; ensure it's on the runtimepath before
+  -- requiring telescope.builtin, otherwise the require fails with
+  -- "module 'telescope.builtin' not found" on first use in a session.
+  require("lazy").load({ plugins = { "telescope.nvim" } })
+  require("telescope.builtin").live_grep({ cwd = cwd })
 end, { desc = "Grep (repo root)" })
 -- Copy current file path to the system clipboard
 vim.keymap.set("n", "<leader>cp", function()
